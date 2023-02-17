@@ -1,0 +1,36 @@
+@use "variables";
+
+.footer {
+  padding: 80px 0;
+  background-color: $footerBgColor;
+  &__holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .footer__title {
+      font-family: $logoFont;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .footer__sub-title {
+      font-family: $subFont;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+    }
+    .footer__icons {
+      display: flex;
+      gap: 33px;
+      svg {
+        fill: $textColor;
+        &:hover {
+          fill: $navColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@use "variables";
+
+.section-5 {
+  padding: 120px 0;
+  background: url("../images/section5-background-large.jpg") top center / 100% 100% no-repeat;
+  &__holder {
+    .section-5__title {
+      font-family: $mainFont;
+      font-size: 36px;
+      line-height: 40px;
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 60px;
+    }
+    .section-5__cart {
+      display: flex;
+      height: 308px;
+      .section-5__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px 60px;
+        background: $darkGrey;
+        .section-5__cart--title {
+          font-family: $textFont;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 28px;
+          text-transform: uppercase;
+          margin-bottom: 16px;
+        }
+        .section-5__cart--text {
+          font-family: $textFont;
+          font-size: 16px;
+          line-height: 28px;
+          letter-spacing: 0.1em;
+          svg {
+            fill: $navColor;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1359px) {
+    background: url("../images/section5-background-medium.jpg")  top center / 100% 100% no-repeat;
+    .section-5__cart {
+      height: 336px;
+    }
+
+  }
+  @media screen and (max-width: 1023px) {
+    background: url("../images/section5-background-small.jpg") top center / 100% 100% no-repeat;
+    padding: 60px 0 120px;
+    .section-5__cart {
+      flex-direction: column;
+      height: auto;
+      img {
+        width: 100%
+      }
+      .section-5__details {
+        padding: 48px 60px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    background: url("../images/section5-background-extra-small.jpg")  top center / 100% 100% no-repeat;
+  }
+
+  }

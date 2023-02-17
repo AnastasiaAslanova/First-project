@@ -1,0 +1,189 @@
+@use "variables";
+.navigation {
+  padding: 32px 0;
+  background-color: $navColor;
+  display: flex;
+  align-items: center;
+  &__holder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    input {
+      display: none;
+    }
+  }
+  &__logo {
+    >p {
+      font: $logoFont;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+  }
+  &__nav {
+    position: static;
+    visibility: visible;
+    height: auto;
+    background: none;
+    padding: 0;
+    transition: initial;
+    > ul {
+      display: flex;
+      > li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 40px 0 0;
+        > a {
+          font: $mainFont;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            bottom: -5px;
+            width: 0;
+            height: 1.5px;
+            background-color: $textColor;
+            transition: width 0.35s;
+          }
+          &:hover:before {
+            width: 70%;
+          }
+        }
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    .nav__logo {
+    display: none;
+    }
+    .close {
+      display: none;
+    }
+  }
+
+
+  @media screen and (max-width: 1023px) {
+      height: 136px;
+      &__holder {
+        flex-direction: column;
+      }
+      &__logo {
+        margin-bottom: 32px;
+      }
+    }
+
+
+  @media screen and (max-width: 767px) {
+    height: 84px;
+    &__logo {
+      margin-bottom: 0;
+      flex: auto;
+      display: flex;
+      justify-content: center;
+    }
+    &__holder {
+      flex-direction: row;
+    }
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 42px;
+      height: 42px;
+      padding: 10px;
+
+      > span {
+        display: block;
+        height: 2px;
+        border-radius: 2px;
+        background: $textColor;
+        width: 100%;
+      }
+    }
+    &__nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: -100vh;
+      left: 0;
+      width: 100%;
+      background: $navColor;
+      padding: 15px;
+      height: 100vh;
+      transition: .5s all;
+      visibility: hidden;
+      z-index: 0;
+      > ul {
+        display: flex;
+        flex-direction: column;
+        > li {
+          margin: 0 0 30px;
+          text-align: center;
+          > a {
+            font: 34px / 1.3 $textColor;
+          }
+        }
+      }
+      .close {
+        display: block;
+        position: absolute;
+        right: 15px;
+      }
+      .nav__logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 32px;
+        > p {
+          font: $logoFont;
+          font-size: 24px;
+          line-height: 28px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+      }
+    }
+    &__links {
+      position: relative;
+      flex-direction: row-reverse;
+      gap: 40px;
+      input {
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0;
+        display: block;
+        &:hover {
+          cursor: pointer;
+        }
+        &:checked {
+          & ~ .navigation__nav {
+            top: 0;
+            visibility: visible;
+            z-index: 1;
+          }
+
+        }
+      }
+    }
+
+  }
+}
+

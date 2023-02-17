@@ -1,0 +1,29 @@
+@use "variables";
+@mixin btn($width,$height) {
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 20px;
+  width: $width;
+  height: $height;
+  right: 5px;
+  top: 52px;
+  background-color: $navColor;
+  span {
+    font: $mainFont;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $textColor;
+  }
+  &:hover {
+    background-color: $textColor;
+    border: 1px solid $navColor;
+    span {
+      color: $navColor;
+    }
+  }
+}

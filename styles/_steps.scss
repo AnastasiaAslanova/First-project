@@ -1,0 +1,65 @@
+@use "variables";
+
+.steps {
+  padding: 0 0 44px;
+  background: $darkGrey;
+  .steps__holder {
+    height: 250px;
+    background: url("../images/line-lg.svg")  top center / 100% 100% no-repeat;
+    background-size: 78%;
+    background-position-y: center;
+    background-position-x: center;
+    width: 850px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 80px;
+      width: 100%;
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $darkGrey;
+        padding-top: 13px;
+      }
+    }
+    svg {
+      width: 64px;
+      height: 64px;
+      fill: $navColor;
+
+    }
+    .red{
+      fill:$redIcon;
+    }
+    .steps__title {
+      font-family: $mainFont;
+      font-size: 36px;
+      line-height: 40px;
+      text-transform: capitalize;
+    }
+  @media screen and (max-width: 1023px) {
+    height: 658px;
+    .container {
+      height: 100%;
+      padding: 60px;
+      .steps__holder {
+        background: $darkGrey;
+        height: 100%;
+        align-items: center;
+        width: 100%;
+      }
+      ul {
+        flex-direction: column;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+      }
+    }
+  }
+  }

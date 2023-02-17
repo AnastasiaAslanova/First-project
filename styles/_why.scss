@@ -1,0 +1,104 @@
+@use "variables";
+.why {
+  background: url("../images/wh-background-large.jpg") top center / 100% 100% no-repeat;
+  .container {
+    .why__holder {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 122px;
+      .why__info {
+        height: 720px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .why__info--title {
+          font: $mainFont;
+          font-size: 36px;
+          line-height: 40px;
+          text-transform: capitalize;
+          margin-bottom: 24px;
+        }
+        .why__info--text {
+          font: $textFont;
+          font-size: 16px;
+          line-height: 28px;
+          letter-spacing: 0.1em;
+          margin-bottom: 32px;
+        }
+        .btn {
+          @include btn(213px,60px);
+        }
+      }
+      .why__foto {
+        position: relative;
+        .why__foto--first {
+          position: absolute;
+          top: 124px;
+          left: 24px;
+        }
+        .why__foto--second {
+          position: absolute;
+          top: 360px;
+          right: 0;
+        }
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 1359px) {
+    background: url("../images/why-background-medium.jpg") top center / 100% 100% no-repeat;
+    .container {
+      .why__holder {
+        grid-gap: 24px;
+      }
+    }
+  }
+  @media screen and (max-width: 1023px) {
+    background: url("../images/why-background-small.jpg") top center / 100% 100% no-repeat;
+    height: 659px;
+    display: flex;
+    align-items: center;
+    .container {
+      .why__holder {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        .why__info {
+          align-items: center;
+          height: auto;
+          order: 1;
+        }
+        .why__foto {
+          display: flex;
+          justify-content: center;
+          gap: 24px;
+          .why__foto--first{
+            position: static;
+          }
+          .why__foto--second{
+            position: static;
+          }
+        }
+      }
+    }
+
+  }
+  @media screen and (max-width: 767px) {
+    background: url("../images/why-background-extra-small.jpg") top center / 100% 100% no-repeat;
+    height: 630px;
+    .why__foto--first {
+      position: absolute;
+      top: 124px;
+      left: 24px;
+
+    }
+    .why__foto--second {
+      position: absolute;
+      top: 360px;
+      right: 0;
+
+    }
+  }
+}

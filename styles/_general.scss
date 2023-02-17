@@ -1,0 +1,39 @@
+@use "variables";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $textColor;
+  cursor: pointer;
+}
+body {
+  font: $mainFont;
+  color: $textColor;
+  @media screen and (max-width: 767px) {
+    &.blocked {
+      overflow: hidden;
+    }
+  }
+}
+.container {
+  width: 1140px;
+  margin: 0 auto;
+  @media screen and (max-width: 1359px) {
+    width: calc(100vw - 64px);
+  }
+  @media screen and (max-width: 1023px) {
+    width: calc(100vw - 48px);
+  }
+  @media screen and (max-width: 767px) {
+    width: calc(100vw - 36px);
+  }
+}

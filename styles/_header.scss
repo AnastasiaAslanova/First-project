@@ -1,0 +1,106 @@
+@use "variables";
+
+.header {
+  background: url("../images/header-background-large.jpg") top center / 100% 100% no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 124px 0;
+  &__holder {
+    @extend %flexCenter;
+    flex-direction: column;
+    .header__info {
+      text-align: center;
+      margin-bottom: 210px;
+      width: 100%;
+      .header__info--title {
+        font: $logoFont;
+        text-transform: uppercase;
+        font-size: 48px;
+        line-height: 52px;
+        margin-bottom: 8px;
+      }
+      .header__info--sub-title{
+        font: $subFont;
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: 0.31em;
+      }
+      form {
+        position: relative;
+        margin: 0 auto;
+        max-width: 57%;
+        input[type=text] {
+          width: 100%;
+          padding: 20px 36px;
+          margin: 48px 0;
+          box-sizing: border-box;
+          &::placeholder {
+            font: $subFont;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.2em;
+            color: $textGrey;
+          }
+        }
+        button {
+        @include btn(139px,52px);
+          position: absolute;
+          gap: 9px;
+          svg {
+          fill: $textColor;
+          margin-top: 3px;
+        }
+          &:hover {
+            svg {
+              fill: $navColor;
+            }}
+        }
+      }
+
+    }
+    .header__scroll {
+      a {
+        @extend %flexCenter;
+        flex-direction: column;
+
+        span {
+          margin-bottom: 4px;
+          font: $subFont;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.2em;
+        }
+        svg {
+          fill: $textColor;
+        }
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 1359px) {
+    background: url("../images/header-background-medium.jpg") top center / 100% 100% no-repeat;
+  }
+  @media screen and (max-width: 1023px) {
+    background: url("../images/header-background-small.jpg") top center / 100% 100% no-repeat;
+    .header__info {
+      form {
+        max-width: 90%;
+      }
+    }
+
+  }
+  @media screen and (max-width: 767px) {
+    background: url("../images/header-background-extra-small.jpg") top center / 100% 100% no-repeat;
+        .header__info{
+          form {
+            max-width: 98%;
+            input[type=text] {
+              padding: 20px 10px;
+            }
+          }
+        }
+    }
+  }

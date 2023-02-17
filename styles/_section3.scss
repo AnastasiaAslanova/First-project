@@ -1,0 +1,54 @@
+@use "variables";
+
+.section-3 {
+  padding: 220px 0 120px;
+  background: url("../images/section3-background-large.jpg")  top center / 100% 100% no-repeat;
+  &__holder {
+    .section-3__cart {
+      width: 50%;
+      padding: 44px 32px;
+      background: rgba(35, 35, 35, 0.9);
+      &--sub-title {
+        font-family: $textFont;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+      }
+      &--title {
+        font-family: $subFont;
+        font-size: 20px;
+        line-height: 28px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      &--text {
+        font-family: $textFont;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+        margin-bottom: 24px;
+      }
+      .btn {
+        @include btn(213px, 60px);
+      }
+    }
+  }
+  @media screen and (max-width: 1359px) {
+    background: url("../images/section3-background-medium.jpg")  top center / 100% 100% no-repeat;
+
+  }
+  @media screen and (max-width: 1023px) {
+    background: url("../images/section3-background-small.jpg")  top center / 100% 100% no-repeat;
+    padding: 120px 0;
+    &__holder {
+      .section-3__cart {
+        width: 100%;
+        margin: auto;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    background: url("../images/section3-background-extra-small.jpg")  top center / 100% 100% no-repeat;
+  }
+}
