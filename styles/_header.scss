@@ -33,16 +33,15 @@
         max-width: 57%;
         input[type=text] {
           width: 100%;
-          padding: 20px 36px;
+          padding: 18px 36px;
           margin: 48px 0;
           box-sizing: border-box;
-          &::placeholder {
-            font: $subFont;
-            font-size: 14px;
-            line-height: 20px;
-            letter-spacing: 0.2em;
-            color: $textGrey;
-          }
+          outline: none;
+          font: $subFont;
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.2em;
+          color: $textGrey;
         }
         button {
         @include btn(139px,52px);
